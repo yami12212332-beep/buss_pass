@@ -48,9 +48,7 @@ body.edit-mode .editable-text::after { content: "✎"; font-size: 8px; color: #7
 .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
 .tcs-logo { width: 250px; opacity: .9; object-fit: contain; }
 
-/* The installed app occupies the entire screen instead of a browser tab. */
-@media (display-mode: fullscreen), (display-mode: standalone) {
-  body { background: #eef0f3; }
-  .phone-wrapper { max-width: none; }
+/* Keep the same phone-width layout when launched from a home-screen shortcut. */
+@media (display-mode: standalone) {
   .install-btn { display: none; }
 }

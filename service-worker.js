@@ -1,4 +1,4 @@
-const CACHE_NAME = "digital-bus-pass-v1";
+const CACHE_NAME = "digital-bus-pass-v2";
 const APP_FILES = [
   "./",
   "./index.html",
