@@ -34,8 +34,6 @@ body { font-family: "Roboto", sans-serif; background: #e8eaed; min-height: 100vh
 .qr-content img { display: block; width: 300px; height: 300px; background: white; image-rendering: pixelated; }
 .qr-btn { display: block; background: #4a1c96; color: white; text-align: center; font-size: 15px; font-weight: 400; padding: 16px; margin: 14px 14px 0; border-radius: 0; border: none; cursor: pointer; width: calc(100% - 28px); letter-spacing: .2px; transition: background .2s; }
 .qr-btn:hover { background: #3a1578; }
-.install-btn { display: block; background: transparent; color: #4a1c96; text-align: center; font-size: 14px; font-weight: 500; padding: 12px; margin: 10px 14px 0; border: 1px solid #4a1c96; border-radius: 4px; cursor: pointer; width: calc(100% - 28px); }
-.install-btn:hover { background: #ede7f6; }
 .footer-area { flex: 1; min-height: 80px; display: flex; align-items: center; justify-content: center; }
 .edit-banner { display: none; background: #ff9800; color: white; text-align: center; font-size: 11px; font-weight: 500; padding: 5px; letter-spacing: .3px; animation: pulse 1.5s infinite; }
 @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .6; } }
@@ -47,8 +45,3 @@ body.edit-mode .editable-text::after { content: "✎"; font-size: 8px; color: #7
 .toast { position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%) translateY(60px); background: #333; color: white; padding: 9px 18px; border-radius: 20px; font-size: 13px; z-index: 999; opacity: 0; transition: transform .3s, opacity .3s; white-space: nowrap; }
 .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
 .tcs-logo { width: 250px; opacity: .9; object-fit: contain; }
-
-/* Keep the same phone-width layout when launched from a home-screen shortcut. */
-@media (display-mode: standalone) {
-  .install-btn { display: none; }
-}
