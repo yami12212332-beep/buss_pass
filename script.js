@@ -7,6 +7,29 @@ const th = document.getElementById("th");
 const passCard = document.querySelector(".pass-card");
 const qrImage = document.getElementById("qr-image");
 const qrButton = document.querySelector(".qr-btn");
+const installButton = document.getElementById("install-btn");
+let installPrompt = null;
+
+window.addEventListener("beforeinstallprompt", (event) => {
+  event.preventDefault();
+  installPrompt = event;
+  installButton.hidden = false;
+});
+
+installButton.addEventListener("click", async () => {
+  if (!installPrompt) return;
+  installPrompt.prompt();
+  await installPrompt.userChoice;
+  installPrompt = null;
+  installButton.hidden = true;
+});
+
+window.addEventListener("appinstalled", () => {
+  installPrompt = null;
+  installButton.hidden = true;
+  toast("Bus Pass installed to your home screen");
+});
+
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => navigator.serviceWorker.register("service-worker.js"));
 }
