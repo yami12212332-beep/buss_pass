@@ -1,0 +1,47 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Roboto", sans-serif; background: #e8eaed; min-height: 100vh; display: flex; justify-content: center; }
+.phone-wrapper { width: 100%; max-width: 420px; min-height: 100vh; background: #eef0f3; display: flex; flex-direction: column; }
+.topbar { background: #5b2d9e; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; }
+.topbar-title { color: white; font-size: 17px; font-weight: 400; letter-spacing: .2px; }
+.hamburger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; }
+.hamburger span { display: block; width: 20px; height: 2px; background: white; border-radius: 1px; }
+.bell-svg { width: 24px; height: 24px; }
+.route-card { background: linear-gradient(135deg, #3a70e8 0%, #7c3aed 100%); margin: 14px 14px 12px; border-radius: 12px; padding: 20px 16px 18px; text-align: center; color: white; }
+.route-from, .route-to { font-size: 16px; font-weight: 600; letter-spacing: .2px; }
+.route-arrow { margin: 7px 0; font-size: 20px; opacity: .95; }
+.office-times { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; gap: 12px; }
+.route-time { font-size: 14px; font-weight: 700; white-space: nowrap; }
+.pass-card { background: #f5f6f8; margin: 0 14px; min-height: 330px; border-radius: 0; overflow: hidden; box-shadow: 0 1px 6px rgba(0,0,0,.07); position: relative; }
+.qr-card { display: none; min-height: 255px; }
+.pass-card.showing-qr .pass-body { display: none; }
+.pass-card.showing-qr .qr-card { display: block; }
+.green-leaf { position: absolute; top: 0; left: 0; width: 56px; height: 56px; cursor: pointer; z-index: 10; -webkit-tap-highlight-color: transparent; }
+.green-leaf svg { display: block; width: 56px; height: 56px; }
+.green-leaf.flash svg path { fill: #6fc96f; transition: fill .1s; }
+.tap-hint { position: absolute; top: 9px; left: 6px; font-size: 8px; font-weight: 700; color: white; z-index: 11; pointer-events: none; opacity: 0; transition: opacity .3s; }
+.tap-hint.visible { opacity: 1; }
+.pass-header { text-align: center; padding: 24px 20px 20px; font-size: 18px; font-weight: 400; color: #1a1a1a; letter-spacing: .1px; }
+.pass-divider { border: none; border-top: 2.5px dashed #c8c8c8; margin: 0 10px; }
+.pass-body { padding: 22px 22px 26px; }
+.field-row { display: flex; justify-content: space-between; margin-bottom: 24px; gap: 16px; }
+.field-group { display: flex; flex-direction: column; flex: 1; }
+.field-group.right { align-items: flex-end; }
+.field-label { font-size: 14px; color: #aaa; font-weight: 400; margin-bottom: 13px; }
+.field-value { font-size: 15px; font-weight: 400; color: #555; }
+.field-group.right .field-value { text-align: right; }
+.route-line { text-align: center; font-size: 12.5px; color: #555; font-weight: 400; margin-top: 10px; padding: 0 4px; }
+.qr-content { display: flex; min-height: 255px; padding: 20px; flex-direction: column; align-items: center; justify-content: center; }
+.qr-content img { display: block; width: 300px; height: 300px; background: white; image-rendering: pixelated; }
+.qr-btn { display: block; background: #4a1c96; color: white; text-align: center; font-size: 15px; font-weight: 400; padding: 16px; margin: 14px 14px 0; border-radius: 0; border: none; cursor: pointer; width: calc(100% - 28px); letter-spacing: .2px; transition: background .2s; }
+.qr-btn:hover { background: #3a1578; }
+.footer-area { flex: 1; min-height: 80px; display: flex; align-items: center; justify-content: center; }
+.edit-banner { display: none; background: #ff9800; color: white; text-align: center; font-size: 11px; font-weight: 500; padding: 5px; letter-spacing: .3px; animation: pulse 1.5s infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .6; } }
+body.edit-mode .edit-banner { display: block; }
+.editable-text { position: relative; display: inline-block; }
+body.edit-mode .editable-text { border-bottom: 1.5px dashed #7c3aed; cursor: pointer; min-width: 40px; padding-bottom: 1px; }
+body.edit-mode .editable-text::after { content: "✎"; font-size: 8px; color: #7c3aed; position: absolute; top: -4px; right: -12px; opacity: .6; }
+.inline-input { background: transparent; border: none; border-bottom: 2px solid #7c3aed; outline: none; font-family: "Roboto", sans-serif; color: inherit; width: 100%; padding: 0; }
+.toast { position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%) translateY(60px); background: #333; color: white; padding: 9px 18px; border-radius: 20px; font-size: 13px; z-index: 999; opacity: 0; transition: transform .3s, opacity .3s; white-space: nowrap; }
+.toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+.tcs-logo { width: 250px; opacity: .9; object-fit: contain; }

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <title>Digital Bus Pass</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="toast" id="toast"></div>
+    <div class="phone-wrapper">
+      <div class="edit-banner">✏️ EDIT MODE — TAP ANY TEXT TO EDIT</div>
+      <div class="topbar">
+        <div class="hamburger"><span></span><span></span><span></span></div>
+        <div class="topbar-title">Digital Bus Pass</div>
+        <svg class="bell-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2.5c-.3 0-.5.1-.5.3V4A6 6 0 0 0 6 10c0 4.5-2 6.5-2 6.5h16s-2-2-2-6.5a6 6 0 0 0-5.5-6V2.8c0-.2-.2-.3-.5-.3z" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+          <path d="M10.3 19a1.7 1.7 0 0 0 3.4 0" stroke="white" stroke-width="1.6" stroke-linecap="round" fill="none" />
+        </svg>
+      </div>
+      <div class="route-card">
+        <div class="route-from editable-text">Guduvancherri</div>
+        <div class="route-arrow">&#8652</div>
+        <div class="route-to editable-text">Siruseri</div>
+        <div class="office-times">
+          <div class="route-time">Office In - <span class="editable-text">09:00</span></div>
+          <div class="route-time">Office Out - <span class="editable-text">16:00</span></div>
+        </div>
+      </div>
+      <div class="pass-card">
+        <div class="green-leaf" id="gc">
+          <svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg"><path d="M0 0 L56 0 Q0 0 0 56 Z" fill="#1DC840" /></svg>
+          <span class="tap-hint" id="th"></span>
+        </div>
+        <div class="pass-header">Confirmed Bus Pass</div>
+        <hr class="pass-divider" />
+        <div class="pass-body">
+          <div class="field-row">
+            <div class="field-group"><div class="field-label">Name</div><div class="field-value"><span class="editable-text">YESHWANTH R</span></div></div>
+            <div class="field-group right"><div class="field-label">Employee ID</div><div class="field-value"><span class="editable-text">2863313</span></div></div>
+          </div>
+          <div class="field-row">
+            <div class="field-group"><div class="field-label">Bus Stop Name</div><div class="field-value"><span class="editable-text">Guduvancherri</span></div></div>
+            <div class="field-group right"><div class="field-label">Route Type</div><div class="field-value"><span class="editable-text">Both</span></div></div>
+          </div>
+          <div class="field-row">
+            <div class="field-group"><div class="field-label">Start Date</div><div class="field-value"><span class="editable-text" id="start-date"></span></div></div>
+            <div class="field-group right"><div class="field-label">End Date</div><div class="field-value"><span class="editable-text" id="end-date"></span></div></div>
+          </div>
+          <div class="route-line">Route : <span class="editable-text">Guduvancherri To Siruseri Via-Vandallur</span></div>
+        </div>
+        <div class="qr-card" id="qr-card">
+          <div class="qr-content">
+            <img id="qr-image" alt="Bus pass QR code" />
+          </div>
+        </div>
+      </div>
+      <button class="qr-btn">View QR</button>
+      <div class="footer-area" id="footer-area"><img src="https://res.cloudinary.com/dxj6kvede/image/upload/v1774178308/logo_awxedi.png" alt="TCS Logo" class="tcs-logo" /></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
